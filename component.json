@@ -1,0 +1,786 @@
+{
+    "title": "CitySDK Linked Data",
+    "description": "An API for the distribution and annotation of open data, for small cities and big metropolitan areas.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/waag.org/v1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://api.citysdk.waag.org/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "GET_layers___format_": {
+            "main": "./lib/actions/GET_layers___format_.js",
+            "title": "Return all layers",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_layers___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_layers___format_": {
+            "main": "./lib/actions/POST_layers___format_.js",
+            "title": "Create new layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_layers___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_layers__layer___format_": {
+            "main": "./lib/actions/DELETE_layers__layer___format_.js",
+            "title": "Delete a layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_layers__layer___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_layers__layer___format_": {
+            "main": "./lib/actions/GET_layers__layer___format_.js",
+            "title": "Return single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_layers__layer___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PATCH_layers__layer___format_": {
+            "main": "./lib/actions/PATCH_layers__layer___format_.js",
+            "title": "Edit a layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PATCH_layers__layer___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_layers__layer_context___format_": {
+            "main": "./lib/actions/GET_layers__layer_context___format_.js",
+            "title": "Return JSON-LD context of single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_layers__layer_context___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PUT_layers__layer_context___format_": {
+            "main": "./lib/actions/PUT_layers__layer_context___format_.js",
+            "title": "Overwrite JSON-LD context of single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PUT_layers__layer_context___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_layers__layer_fields___format_": {
+            "main": "./lib/actions/GET_layers__layer_fields___format_.js",
+            "title": "Return all fields of single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_layers__layer_fields___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_layers__layer_fields___format_": {
+            "main": "./lib/actions/POST_layers__layer_fields___format_.js",
+            "title": "Create new field for single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_layers__layer_fields___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_layers__layer_fields__field___format_": {
+            "main": "./lib/actions/DELETE_layers__layer_fields__field___format_.js",
+            "title": "Delete a single field on single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_layers__layer_fields__field___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_layers__layer_fields__field___format_": {
+            "main": "./lib/actions/GET_layers__layer_fields__field___format_.js",
+            "title": "Return single field of single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_layers__layer_fields__field___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PATCH_layers__layer_fields__field___format_": {
+            "main": "./lib/actions/PATCH_layers__layer_fields__field___format_.js",
+            "title": "Edit single field on single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PATCH_layers__layer_fields__field___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PUT_layers__layer_fields__field___format_": {
+            "main": "./lib/actions/PUT_layers__layer_fields__field___format_.js",
+            "title": "Overwrite single field on single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PUT_layers__layer_fields__field___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_layers__layer_objects___format_": {
+            "main": "./lib/actions/DELETE_layers__layer_objects___format_.js",
+            "title": "Delete all objects from a single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_layers__layer_objects___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_layers__layer_objects___format_": {
+            "main": "./lib/actions/GET_layers__layer_objects___format_.js",
+            "title": "Return all objects with data on single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_layers__layer_objects___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PATCH_layers__layer_objects___format_": {
+            "main": "./lib/actions/PATCH_layers__layer_objects___format_.js",
+            "title": "Edit one or more objects and data on single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PATCH_layers__layer_objects___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_layers__layer_objects___format_": {
+            "main": "./lib/actions/POST_layers__layer_objects___format_.js",
+            "title": "Create one or more objects with data on single layer, or add data to existing objects (or a combination thereof)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_layers__layer_objects___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_layers__layer_objects__cdk_id___format_": {
+            "main": "./lib/actions/GET_layers__layer_objects__cdk_id___format_.js",
+            "title": "Return metadata of single layer about single object, e.g. the date the data was added/modified, etc.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_layers__layer_objects__cdk_id___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_layers__layer_owners___format_": {
+            "main": "./lib/actions/GET_layers__layer_owners___format_.js",
+            "title": "Return all owners associated with single layer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_layers__layer_owners___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_ngsi10_contextEntities__entity___format_": {
+            "main": "./lib/actions/GET_ngsi10_contextEntities__entity___format_.js",
+            "title": "Return single context entity",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_ngsi10_contextEntities__entity___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PUT_ngsi10_contextEntities__entity_attributes___format_": {
+            "main": "./lib/actions/PUT_ngsi10_contextEntities__entity_attributes___format_.js",
+            "title": "Update attributes for single context entity",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PUT_ngsi10_contextEntities__entity_attributes___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_ngsi10_contextEntities__entity_attributes__attribute___format_": {
+            "main": "./lib/actions/GET_ngsi10_contextEntities__entity_attributes__attribute___format_.js",
+            "title": "Return single context entity attribute",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_ngsi10_contextEntities__entity_attributes__attribute___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_ngsi10_contextEntityTypes__cetype___format_": {
+            "main": "./lib/actions/GET_ngsi10_contextEntityTypes__cetype___format_.js",
+            "title": "Return objects of particular type",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_ngsi10_contextEntityTypes__cetype___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_ngsi10_contextEntityTypes__cetype_attributes__attribute___format_": {
+            "main": "./lib/actions/GET_ngsi10_contextEntityTypes__cetype_attributes__attribute___format_.js",
+            "title": "Return objects of particular type",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_ngsi10_contextEntityTypes__cetype_attributes__attribute___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_ngsi10_queryContext___format_": {
+            "main": "./lib/actions/POST_ngsi10_queryContext___format_.js",
+            "title": "Query context broker for contextElements",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_ngsi10_queryContext___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_ngsi10_subscribeContext___format_": {
+            "main": "./lib/actions/POST_ngsi10_subscribeContext___format_.js",
+            "title": "Create a new context subscription",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_ngsi10_subscribeContext___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_ngsi10_unsubscribeContext___format_": {
+            "main": "./lib/actions/POST_ngsi10_unsubscribeContext___format_.js",
+            "title": "Delete a context subscription",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_ngsi10_unsubscribeContext___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_ngsi10_updateContext___format_": {
+            "main": "./lib/actions/POST_ngsi10_updateContext___format_.js",
+            "title": "Add or update NGSI contextElements",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_ngsi10_updateContext___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_ngsi10_updateContextSubscription___format_": {
+            "main": "./lib/actions/POST_ngsi10_updateContextSubscription___format_.js",
+            "title": "Update/edit a context subscription",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_ngsi10_updateContextSubscription___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_objects___format_": {
+            "main": "./lib/actions/GET_objects___format_.js",
+            "title": "Return all objects",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_objects___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_objects__cdk_id___format_": {
+            "main": "./lib/actions/DELETE_objects__cdk_id___format_.js",
+            "title": "Delete a single object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_objects__cdk_id___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_objects__cdk_id___format_": {
+            "main": "./lib/actions/GET_objects__cdk_id___format_.js",
+            "title": "Get a single object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_objects__cdk_id___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PATCH_objects__cdk_id___format_": {
+            "main": "./lib/actions/PATCH_objects__cdk_id___format_.js",
+            "title": "Edit a single object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PATCH_objects__cdk_id___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_objects__cdk_id_layers___format_": {
+            "main": "./lib/actions/GET_objects__cdk_id_layers___format_.js",
+            "title": "Get all layers that contain data of single object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_objects__cdk_id_layers___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_objects__cdk_id_layers__layer___format_": {
+            "main": "./lib/actions/DELETE_objects__cdk_id_layers__layer___format_.js",
+            "title": "Remove data on layer from single object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_objects__cdk_id_layers__layer___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_objects__cdk_id_layers__layer___format_": {
+            "main": "./lib/actions/GET_objects__cdk_id_layers__layer___format_.js",
+            "title": "Return all data on single layer of single object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_objects__cdk_id_layers__layer___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PATCH_objects__cdk_id_layers__layer___format_": {
+            "main": "./lib/actions/PATCH_objects__cdk_id_layers__layer___format_.js",
+            "title": "Update data on layer to single object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PATCH_objects__cdk_id_layers__layer___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_objects__cdk_id_layers__layer___format_": {
+            "main": "./lib/actions/POST_objects__cdk_id_layers__layer___format_.js",
+            "title": "Add data on layer to single object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_objects__cdk_id_layers__layer___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PUT_objects__cdk_id_layers__layer___format_": {
+            "main": "./lib/actions/PUT_objects__cdk_id_layers__layer___format_.js",
+            "title": "Overwrite data on layer to single object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PUT_objects__cdk_id_layers__layer___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_owners___format_": {
+            "main": "./lib/actions/GET_owners___format_.js",
+            "title": "Return all owners",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_owners___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_owners___format_": {
+            "main": "./lib/actions/POST_owners___format_.js",
+            "title": "Create new owner",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_owners___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_owners__owner___format_": {
+            "main": "./lib/actions/DELETE_owners__owner___format_.js",
+            "title": "Delete owner - and all layers and data belonging to this owner",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_owners__owner___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_owners__owner___format_": {
+            "main": "./lib/actions/GET_owners__owner___format_.js",
+            "title": "Get a single owner",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_owners__owner___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PATCH_owners__owner___format_": {
+            "main": "./lib/actions/PATCH_owners__owner___format_.js",
+            "title": "Edit an owner",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PATCH_owners__owner___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_owners__owner_layers___format_": {
+            "main": "./lib/actions/GET_owners__owner_layers___format_.js",
+            "title": "Return all layers belonging to a single owner",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_owners__owner_layers___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_session___format_": {
+            "main": "./lib/actions/DELETE_session___format_.js",
+            "title": "Close session",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_session___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_session___format_": {
+            "main": "./lib/actions/GET_session___format_.js",
+            "title": "Return a session key",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_session___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

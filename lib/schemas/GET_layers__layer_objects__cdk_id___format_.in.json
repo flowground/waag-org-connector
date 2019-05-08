@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "layer": {
+            "required": true,
+            "type": "string"
+        },
+        "cdk_id": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

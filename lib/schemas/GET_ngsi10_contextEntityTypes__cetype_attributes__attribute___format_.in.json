@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "cetype": {
+            "required": true,
+            "type": "string"
+        },
+        "attribute": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

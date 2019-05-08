@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "layer": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

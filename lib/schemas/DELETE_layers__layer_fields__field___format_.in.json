@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "layer": {
+            "required": true,
+            "type": "string"
+        },
+        "field": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
